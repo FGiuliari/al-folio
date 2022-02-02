@@ -13,13 +13,12 @@ news: false  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
+I'm a PhD student at the Pattern Analysis and Computer Vision ([PAVIS](https://pavis.iit.it/)) research line at the Italian Institute of Technology, led by [Dr. Alessio Del Bue](https://www.iit.it/it/people-details/-/people/alessio-delbue).
 
-WIP
-<!---
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm very enthusiastic about deep learning applied to computer vision. Right now, my focus is on 3D reasoning with Graph Neural Networks. Previously, I worked on human trajectory forecasting and Object Navigation.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I enjoy listening to EDM, reading fiction, and playing tabletop Role-Playing Games in my free time.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
--->
+
+To contact me, you can write me an email or write me on Twitter, using the links below!
 
