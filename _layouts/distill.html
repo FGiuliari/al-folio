@@ -2,6 +2,8 @@
 <!-- _layouts/distill.html -->
 <html>
   <head>
+  <meta name="description" content="{{page.meta_description}}">
+  <meta name="keywords" content="{{page.meta_keywords}}">
     {%- include head.html %}
 
     {% include scripts/mathjax.html %}
@@ -52,11 +54,10 @@
     }</script>
   </d-front-matter>
 
-  <body class="{%- if site.navbar_fixed -%}fixed-top-nav{%- endif -%} {%- unless site.footer_fixed -%}sticky-bottom-footer{%- endunless -%}">
-
+  <!-- <body class="{%- if site.navbar_fixed -%}fixed-top-nav{%- endif -%} {%- unless site.footer_fixed -%}sticky-bottom-footer{%- endunless -%}">
+  -->
+  <body>
     <!-- Header -->
-    {%- include header.html %}
-
     <!-- Content -->
     <div class="post distill">
 
