@@ -14,7 +14,7 @@ authors:
   - name: Francesco Giuliari
     url: "https://fgiuliari.github.io/"
     affiliations:
-      name: Italian Institute of Technology (IIT) <br> University of Genoa
+      name: Istituto Italiano di tecnologia (IIT) <br> University of Genoa
   - name: Geri Skenderi
     affiliations:
       name: University of Verona
@@ -24,10 +24,10 @@ authors:
   - name: Yiming Wang
     url: https://www.yimingwang.it/
     affiliations:
-      name: Bruno Kessler Foundation (FBK) <br> Italian Institute of Technology (IIT)
+      name: Fondazione Bruno Kessler (FBK) <br> Istituto Italiano di tecnologia (IIT)
   - name: Alessio Del Bue
     affiliations:
-      name:  Italian Institute of Technology (IIT)
+      name:  Istituto Italiano di tecnologia (IIT)
 
 bibliography: 2018-12-22-distill.bib
 
