@@ -1,6 +1,7 @@
 ---
 layout: distill
 title: Spatial Commonsense Graph for Object localisation in Partial Scenes
+use_title: true
 description: Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks <br><br> <b>This work has been accepted at CVPR 2022</b>
 date: 2022-03-01
 meta_keywords: object localisation, partial scenes, Spatial Commonsense Graph for Object localisation in Partial Scenes, CVPR, Graph Neural Networks

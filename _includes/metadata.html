@@ -18,7 +18,9 @@
     {%- else -%}
         {%- capture title -%}{{ site.title }}{%- endcapture -%}
     {%- endif -%}
-    {%- if page.title != "blank" and page.url != "/" -%}
+    {%- if page.title != "blank" and page.url != "/" and page.use_title == true -%}
+        {{ page.title }}
+    {%- elsif page.title != "blank" and page.url != "/" -%}
         {{ title }} | {{ page.title }}
     {%- else -%}
         {{ title }}
