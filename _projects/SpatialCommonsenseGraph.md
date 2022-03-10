@@ -23,10 +23,10 @@ authors:
   - name: Yiming Wang
     url: https://www.yimingwang.it/
     affiliations:
-      name: Bruno Kessler Foundation (FBK) <br> Italian Institute of Technology, Italy
+      name: Bruno Kessler Foundation (FBK) <br> Italian Institute of Technology (IIT)
   - name: Alessio Del Bue
     affiliations:
-      name:  Italian Institute of Technology
+      name:  Italian Institute of Technology (IIT)
 
 bibliography: 2018-12-22-distill.bib
 
@@ -48,6 +48,55 @@ toc:
 # Below is an example of injecting additional post-specific styles.
 # If you use this post as a template, delete this _styles block.
 
+_styles: >
+  .fake-img p {
+    font-family: monospace;
+    color: white;
+    text-align: left;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .img_faded{
+    opacity: 0.5;
+  }
+
+  .carousel_black_bg{
+    background-color: rgba(1,1,1,1);
+  }
+
+  .carousel{
+    height: 500px;
+  }
+  .carousel-item .{
+    height:100%;
+  }
+  .carousel-item {
+    height:100%;
+  }
+  .carousel-inner{
+    height:100%;
+  }
+  .carousel-inner figure{
+    height:100%;
+  }
+
+  .carousel-inner figure picture{
+    height:100%;
+    width:auto;
+    max-width:100%;
+  }
+  .carousel-inner figure picture img{
+    height:100%;
+    width:auto;
+    max-width:100%;
+    position:absolute;
+    left:0;
+    right:0;
+    margin: auto;
+  }
+
 ---
 
 
@@ -59,7 +108,7 @@ first, we feed the SCG into a novel Proximity Prediction Network, a graph neural
 
 <div class="row">
     <div class="col-12">
-        {% include figure.html path="assets/img/SCG/teaser.png" title="example image" class="img-fluid rounded z-depth-0" %}
+        {% include figure.html path="assets/img/SCG/teaser.png" title="Teaser" class="img-fluid rounded z-depth-0" %}
     </div>
 </div>
 <div class="caption">
@@ -76,14 +125,21 @@ Given a set of objects (indicated in the green circles) in a partially known sce
 3. We propose **SCG Object Localiser**, a two-staged localisation solution that is agnostic to scene coordinates. The distances between the unseen object and all known objects are first estimated and then used for the localisation based on circular intersections.
 
 ## Code and Dataset
-The dataset and code for he paper can be found in this repo:
+The dataset is available on gihub:
 <div class="row">
-    <div class="col-6 col-sm-3">
+    <div class="col-12 col-sm-4">
     <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph-Dataset">
-        {% include figure.html path="assets/img/GitHub-Mark.png" title="example image" class="img-fluid rounded z-depth-0" %}
+        {% include figure.html path="assets/img/GitHub-Mark.png" title="Dataset" class="img-fluid rounded z-depth-0" %}
     </a>
+    <h3 style="text-align:center">Dataset</h3>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-12 col-sm-4">
+        {% include figure.html path="assets/img/GitHub-Mark.png" title="Code" class="img-fluid rounded z-depth-0 img_faded" %}
+    <h3 style="text-align:center">Code will be available soon.</h3>
     </div>
 </div>
+
 
 ## Paper
 
@@ -127,13 +183,18 @@ Below You can see some examples of localisation with our proposed approach
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="carousel-control-prev-icon carousel_black_bg" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="carousel-control-next-icon carousel_black_bg" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
 </div>
 </div>
+
+
+## Contacts
+
+For any question you can open an issue on [GitHub](https://github.com/FGiuliari/SpatialCommonsenseGraph-Dataset/issues) or send an email to [Francesco Giuliari](mailto:francesco.giuliari@iit.it).
