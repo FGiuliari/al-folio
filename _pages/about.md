@@ -6,7 +6,7 @@ subtitle: PhD student at <a href='https://pavis.iit.it/'>Pavis@IIT </a> #<a href
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.jpeg
   address: 
 
 news: true  # includes a list of news items
