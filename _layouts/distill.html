@@ -62,9 +62,17 @@
     <div class="post distill">
 
       <d-title>
-        <h1>{{ page.title }}</h1>
+        <h1>{{ page.title}}</h1>
+      <div class="row" style="grid-column:text;margin-bottom:30px ">
+          <div class="col-12">
+            {% capture teaser_img%}{{page.img_teaser}}{% endcapture%}
+              {% include figure.html path=teaser_img title='Teaser' class="img-fluid rounded z-depth-0" %}
+          </div>
+      </div>
         <p>{{ page.description }}</p>
+        <p><b>{{page.note}} </b></p>
       </d-title>
+
 
       <d-byline></d-byline>
 

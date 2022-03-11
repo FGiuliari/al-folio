@@ -2,13 +2,15 @@
 layout: distill
 title: Spatial Commonsense Graph for Object localisation in Partial Scenes
 use_title: true
-description: Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks <br><br> <b>This work has been accepted at CVPR 2022</b>
+description: Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks 
+note: This work has been accepted at <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a>
 date: 2022-03-01
 meta_keywords: object localisation, partial scenes, Spatial Commonsense Graph for Object localisation in Partial Scenes, CVPR, Graph Neural Networks
 meta_description: Spatial Commonsense Graph for Object localisation in Partial Scenes
 importance: 1
 category: Research
 img: assets/img/SCG/teaser.png 
+img_teaser: assets/img/SCG/arch2.png
 
 
 authors:
@@ -17,9 +19,11 @@ authors:
     affiliations:
       name: Istituto Italiano di tecnologia (IIT) <br> University of Genoa
   - name: Geri Skenderi
+    url: https://geriskenderi.github.io/
     affiliations:
       name: University of Verona
   - name: Marco Cristani
+    url: https://profs.sci.univr.it/~cristanm/
     affiliations:
       name: University of Verona
   - name: Yiming Wang
@@ -27,6 +31,7 @@ authors:
     affiliations:
       name: Fondazione Bruno Kessler (FBK) <br> Istituto Italiano di tecnologia (IIT)
   - name: Alessio Del Bue
+    url: https://www.iit.it/it/people-details/-/people/alessio-delbue
     affiliations:
       name:  Istituto Italiano di tecnologia (IIT)
 
@@ -100,9 +105,11 @@ _styles: >
     margin: auto;
   }
 
+  a {
+    color: #0c77b7 !important; 
+  }
+
 ---
-
-
 ## Abstract
 We solve object localisation in partial scenes, a new problem of estimating the unknown position of an object (e.g. where is the bag?) given a partial 3D scan of a scene. The proposed solution is based on a novel scene graph model, the Spatial Commonsense Graph (SCG), where objects are the nodes and edges define pairwise distances between them, enriched by concept nodes and relationships from a commonsense knowledge base. This allows SCG to better generalise its spatial inference over unknown 3D scenes. The SCG is used to estimate the unknown position of the target object in two steps:
 first, we feed the SCG into a novel Proximity Prediction Network, a graph neural network that uses attention to perform distance prediction between the node representing the target object and the nodes representing the observed objects in the SCG; second, we propose a Localisation Module based on circular intersection to estimate the object position using all the predicted pairwise distances in order to be independent of any reference system. We create a new dataset of partially reconstructed scenes to benchmark our method and baselines for object localisation in partial scenes, where our proposed method achieves the best localisation performance.
@@ -110,14 +117,20 @@ first, we feed the SCG into a novel Proximity Prediction Network, a graph neural
 
 
 <div class="row">
-    <div class="col-12">
-        {% include figure.html path="assets/img/SCG/teaser.png" title="Teaser" class="img-fluid rounded z-depth-0" %}
+<div class="col-1 col-md-2"></div>
+    <div class="col-10 col-md-8 ">
+        {% include figure.html path="assets/img/SCG/teaser.png" title="Our SCG" class="img-fluid rounded z-depth-0" %}
     </div>
 </div>
+
+<div class="row">
+<div class="col-0 col-md-1"></div>
+    <div class="col-12 col-md-10 ">
 <div class="caption">
 Given a set of objects (indicated in the green circles) in a partially known scene, we aim at estimating the position of a target object (indicated in the orange circle). We treat this localisation problem as an edge prediction problem by constructing a novel scene graph representation, the Spatial Commonsense Graph (SCG), that contains both the spatial knowledge extracted from the reconstructed scene, i.e. the proximity ( black edges) and the commonsense knowledge represented by a set of relevant concepts (indicated in the pink circles) connected by relationships, e.g. UsedFor ( orange edges) and AtLocation ( blue edges)
 </div>
-
+    </div>
+</div>
 ### Key Contributions
 
 **The key contribution of this paper can be summarised as:**
