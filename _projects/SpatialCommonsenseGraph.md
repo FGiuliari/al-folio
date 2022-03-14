@@ -1,9 +1,15 @@
 ---
 layout: distill
-title: Spatial Commonsense Graph for Object localisation in Partial Scenes
+title: Spatial Commonsense Graph for Object Localisation in Partial Scenes
 use_title: true
 description: Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks 
-note: This work has been accepted at <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a>
+note: > 
+  This work has been accepted at <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a> <br>
+  <a href="https://arxiv.org/abs/2203.05380">[Paper]</a>
+  <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph-Dataset">[Dataset]</a>
+  [Code will be available soon]
+
+  
 date: 2022-03-01
 meta_keywords: object localisation, partial scenes, Spatial Commonsense Graph for Object localisation in Partial Scenes, CVPR, Graph Neural Networks
 meta_description: Spatial Commonsense Graph for Object localisation in Partial Scenes
@@ -163,7 +169,8 @@ The dataset is available on gihub:
     
 <div class="row">
     <div class="col-12 col-sm-6">
-      <a href="/assets/pdf/SCG_site_version.pdf">
+      <!--<a href="/assets/pdf/SCG_site_version.pdf"> -->
+      <a href="https://arxiv.org/pdf/2203.05380.pdf">
           {% include figure.html path="assets/img/SCG/pdf_thumb.png" title="example image" class="img-fluid rounded z-depth-0" %}
       </a>
     </div>
@@ -210,6 +217,12 @@ Below You can see some examples of localisation with our proposed approach
 </div>
 </div>
 
+
+
+## Acknowledgments
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 870743.
+
+This work is partially supported by the Italian MIUR through PRIN 2017- Project Grant 20172BH297: I-MALL \- improving the customer experience in stores by intelligent computer vision, and by the project of the Italian Ministry of Education, Universities and Research (MIUR) ”Dipartimenti di Eccellenza 2018-2022
 
 ## Contacts
 
