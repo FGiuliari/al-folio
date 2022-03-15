@@ -17,6 +17,8 @@ importance: 1
 category: Research
 img: assets/img/SCG/teaser.png 
 img_teaser: assets/img/SCG/arch2.png
+og_image: assets/img/SCG/arch2.png
+
 
 
 authors:
