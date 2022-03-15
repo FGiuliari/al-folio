@@ -15,9 +15,9 @@ meta_keywords: object localisation, partial scenes, Spatial Commonsense Graph fo
 meta_description: Spatial Commonsense Graph for Object localisation in Partial Scenes
 importance: 1
 category: Research
-img: assets/img/SCG/teaser.png 
-img_teaser: assets/img/SCG/arch2.png
-og_image: assets/img/SCG/arch2.png
+img: /assets/img/SCG/teaser.png 
+img_teaser: /assets/img/SCG/arch2.png
+og_image: /assets/img/SCG/arch2.png
 
 
 
