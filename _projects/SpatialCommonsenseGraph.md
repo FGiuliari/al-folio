@@ -6,8 +6,7 @@ description: Localising objects in partially observed scenes using Commonsense k
 note: > 
   This work has been accepted at <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a> <br>
   <a href="https://arxiv.org/abs/2203.05380">[Paper]</a>
-  <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph-Dataset">[Dataset]</a>
-  [Code will be available soon]
+  <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph">[Code and Dataset]</a>
 
   
 date: 2022-03-01
@@ -17,7 +16,7 @@ importance: 1
 category: Research
 img: /assets/img/SCG/teaser.png 
 img_teaser: /assets/img/SCG/arch2.png
-og_image: /assets/img/SCG/teaser.png
+og_image: /assets/img/SCG/teaser_169.png
 
 
 
@@ -152,16 +151,12 @@ Given a set of objects (indicated in the green circles) in a partially known sce
 The dataset is available on gihub:
 <div class="row">
     <div class="col-12 col-sm-4">
-    <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph-Dataset">
-        {% include figure.html path="assets/img/GitHub-Mark.png" title="Dataset" class="img-fluid rounded z-depth-0" %}
+    <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph">
+        {% include figure.html path="assets/img/GitHub-Mark.png" title="Code and Dataset" class="img-fluid rounded z-depth-0" %}
     </a>
-    <h3 style="text-align:center">Dataset</h3>
+    <h3 style="text-align:center">Code and Dataset</h3>
     </div>
     <div class="col-sm-4"></div>
-    <div class="col-12 col-sm-4">
-        {% include figure.html path="assets/img/GitHub-Mark.png" title="Code" class="img-fluid rounded z-depth-0 img_faded" %}
-    <h3 style="text-align:center">Code will be available soon.</h3>
-    </div>
 </div>
 
 
