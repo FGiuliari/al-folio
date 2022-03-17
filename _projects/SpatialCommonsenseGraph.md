@@ -6,7 +6,7 @@ description: Localising objects in partially observed scenes using Commonsense k
 note: > 
   This work has been accepted at <a href="https://cvpr2022.thecvf.com/">CVPR 2022</a> <br>
   <a href="https://arxiv.org/abs/2203.05380">[Paper]</a>
-  <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph">[Code and Dataset]</a>
+  <a href="https://github.com/IIT-PAVIS/SpatialCommonsenseGraph">[Code and Dataset]</a>
 
   
 date: 2022-03-01
@@ -151,7 +151,7 @@ Given a set of objects (indicated in the green circles) in a partially known sce
 The dataset is available on gihub:
 <div class="row">
     <div class="col-12 col-sm-4">
-    <a href="https://github.com/FGiuliari/SpatialCommonsenseGraph">
+    <a href="https://github.com/IIT-PAVIS/SpatialCommonsenseGraph">
         {% include figure.html path="assets/img/GitHub-Mark.png" title="Code and Dataset" class="img-fluid rounded z-depth-0" %}
     </a>
     <h3 style="text-align:center">Code and Dataset</h3>
@@ -223,4 +223,4 @@ This work is partially supported by the Italian MIUR through PRIN 2017- Project 
 
 ## Contacts
 
-For any question you can open an issue on [GitHub](https://github.com/FGiuliari/SpatialCommonsenseGraph-Dataset/issues) or send an email to [Francesco Giuliari](mailto:francesco.giuliari@iit.it).
+For any question you can open an issue on [GitHub](https://github.com/IIT-PAVIS/SpatialCommonsenseGraph) or send an email to [Francesco Giuliari](mailto:francesco.giuliari@iit.it).
