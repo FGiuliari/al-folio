@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>
+  <meta name="description" content="Spatial Commonsense Graph for Object localisation in Partial Scenes">
+  <meta name="keywords" content="object localisation, partial scenes, Spatial Commonsense Graph for Object localisation in Partial Scenes, CVPR, Graph Neural Networks">        
+    <!-- Metadata, OpenGraph and Schema.org -->
+    
+    <!-- Website verification -->
+    <meta name="google-site-verification" content="4l8QQVPh5NHfmbjkiAYwe06J1bSGQbmW9Lh12ZFQaSA" />
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spatial Commonsense Graph for Object Localisation in Partial Scenes</title>
+    <meta name="author" content="Francesco  Giuliari" />
+    <meta name="description" content="Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks" />
+    <meta name="keywords" content="Francesco Giuliari, Giuliari,Francesco, researcher, PhD student" />
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Francesco Giuliari" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Francesco Giuliari | Spatial Commonsense Graph for Object Localisation in Partial Scenes" />
+    <meta property="og:url" content="https://fgiuliari.github.io/projects/SpatialCommonsenseGraph/" />
+    <meta property="og:description" content="Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks" />
+    <meta property="og:image" content="https://fgiuliari.github.io/assets/img/SCG/teaser_169.png" />
+    <meta property="og:locale" content="en" />
+
+    <!-- Twitter card -->
+<!--    <meta name="twitter:card" content="summary" />-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Spatial Commonsense Graph for Object Localisation in Partial Scenes" />
+    <meta name="twitter:description" content="Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks" />
+    <meta name="twitter:image" content="https://fgiuliari.github.io/assets/img/SCG/teaser_169.png" />
+    <meta name="twitter:site" content="@FGiuliari93" />
+    <meta name="twitter:creator" content="@FGiuliari93" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "author":
+        {
+          "@type": "Person",
+          "name": "Francesco  Giuliari"
+        },
+        "url": "https://fgiuliari.github.io/projects/SpatialCommonsenseGraph/",
+        "@type": "WebSite",
+        "description": "Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks",
+        "headline": "Spatial Commonsense Graph for Object Localisation in Partial Scenes",
+        "sameAs": ["https://scholar.google.com/citations?user=EOU10lkAAAAJ", "https://github.com/FGiuliari", "https://twitter.com/FGiuliari93"],
+        "name": "Francesco  Giuliari",
+        "@context": "https://schema.org"
+      }
+    </script>
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+    <!-- Styles -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fgiuliari.github.io/projects/SpatialCommonsenseGraph/">
+
+    <!-- Dark Mode -->
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+    <!-- Page/Post style -->
+    <style type="text/css">
+      .fake-img p {
+  font-family: monospace;
+  color: white;
+  text-align: left;
+  margin: 12px 0;
+  text-align: center;
+  font-size: 16px;
+}
+.img_faded{
+  opacity: 0.5;
+}
+.carousel_black_bg{
+  background-color: rgba(1,1,1,1);
+}
+.carousel{
+  height: 500px;
+} .carousel-item .{
+  height:100%;
+} .carousel-item {
+  height:100%;
+} .carousel-inner{
+  height:100%;
+} .carousel-inner figure{
+  height:100%;
+  margin: 0px;
+}
+.carousel-inner figure picture{
+  height:100%;
+  width:auto;
+  max-width:100%;
+} .carousel-inner figure picture img{
+  height:100%;
+  width:auto;
+  max-width:100%;
+  position:absolute;
+  left:0;
+  right:0;
+  margin: auto;
+}
+a {
+  color: #0c77b7 !important; 
+}
+
+    </style>
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "Spatial Commonsense Graph for Object Localisation in Partial Scenes",
+      "description": "Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks",
+      "published": "March 1, 2022",
+      "authors": [
+        {
+          "author": "Francesco Giuliari",
+          "authorURL": "https://fgiuliari.github.io/",
+          "affiliations": [
+            {
+              "name": "Istituto Italiano di tecnologia (IIT) <br> University of Genoa",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "author": "Geri Skenderi",
+          "authorURL": "https://geriskenderi.github.io/",
+          "affiliations": [
+            {
+              "name": "University of Verona",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "author": "Marco Cristani",
+          "authorURL": "https://profs.sci.univr.it/~cristanm/",
+          "affiliations": [
+            {
+              "name": "University of Verona",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "author": "Yiming Wang",
+          "authorURL": "https://www.yimingwang.it/",
+          "affiliations": [
+            {
+              "name": "Fondazione Bruno Kessler (FBK) <br> Istituto Italiano di tecnologia (IIT)",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "author": "Alessio Del Bue",
+          "authorURL": "https://www.iit.it/it/people-details/-/people/alessio-delbue",
+          "affiliations": [
+            {
+              "name": "Istituto Italiano di tecnologia (IIT)",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <!-- <body class="fixed-top-navsticky-bottom-footer">
+  <body>--&gt;
+  
+    <!-- Header -->
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1>Spatial Commonsense Graph for Object Localisation in Partial Scenes</h1>
+      <div class="row" style="grid-column:text;margin-bottom:30px ">
+          <div class="col-12">
+            
+              <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/SCG/arch2-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/SCG/arch2-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/SCG/arch2-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-0" src="/assets/img/SCG/arch2.png" title="Teaser">
+
+  </picture>
+
+</figure>
+
+          </div>
+      </div>
+        <p>Localising objects in partially observed scenes using Commonsense knowledge and Graph Neural Networks</p>
+        <p><b>This work has been accepted at <a href="https://cvpr2022.thecvf.com/" target="_blank" rel="noopener noreferrer">CVPR 2022</a> <br> <a href="https://arxiv.org/abs/2203.05380" target="_blank" rel="noopener noreferrer">[Paper]</a> <a href="https://github.com/IIT-PAVIS/SpatialCommonsenseGraph" target="_blank" rel="noopener noreferrer">[Code and Dataset]</a>
+ </b></p>
+      </d-title>
+
+
+      <d-byline></d-byline>
+
+      <d-article>
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div><a href="#abstract">Abstract</a></div>
+            <ul>
+              <li><a href="#key-contributions">Key Contributions</a></li>
+              
+            </ul>
+<div><a href="#code-and-dataset">Code and Dataset</a></div>
+            <div><a href="#paper">Paper</a></div>
+            <div><a href="#examples-of-localisations">Examples of localisations</a></div>
+            <div><a href="#contacts">Contacts</a></div>
+            
+          </nav>
+        </d-contents>
+
+        <h2 id="abstract">Abstract</h2>
+<p>We solve object localisation in partial scenes, a new problem of estimating the unknown position of an object (e.g. where is the bag?) given a partial 3D scan of a scene. The proposed solution is based on a novel scene graph model, the Spatial Commonsense Graph (SCG), where objects are the nodes and edges define pairwise distances between them, enriched by concept nodes and relationships from a commonsense knowledge base. This allows SCG to better generalise its spatial inference over unknown 3D scenes. The SCG is used to estimate the unknown position of the target object in two steps:
+first, we feed the SCG into a novel Proximity Prediction Network, a graph neural network that uses attention to perform distance prediction between the node representing the target object and the nodes representing the observed objects in the SCG; second, we propose a Localisation Module based on circular intersection to estimate the object position using all the predicted pairwise distances in order to be independent of any reference system. We create a new dataset of partially reconstructed scenes to benchmark our method and baselines for object localisation in partial scenes, where our proposed method achieves the best localisation performance.</p>
+
+<div class="row">
+<div class="col-1 col-md-2"></div>
+    <div class="col-10 col-md-8 ">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/SCG/teaser-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/SCG/teaser-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/SCG/teaser-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-0" src="/assets/img/SCG/teaser.png" title="Our SCG">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<div class="row">
+<div class="col-0 col-md-1"></div>
+    <div class="col-12 col-md-10 ">
+<div class="caption">
+Given a set of objects (indicated in the green circles) in a partially known scene, we aim at estimating the position of a target object (indicated in the orange circle). We treat this localisation problem as an edge prediction problem by constructing a novel scene graph representation, the Spatial Commonsense Graph (SCG), that contains both the spatial knowledge extracted from the reconstructed scene, i.e. the proximity ( black edges) and the commonsense knowledge represented by a set of relevant concepts (indicated in the pink circles) connected by relationships, e.g. UsedFor ( orange edges) and AtLocation ( blue edges)
+</div>
+    </div>
+</div>
+<h3 id="key-contributions">Key Contributions</h3>
+
+<p><strong>The key contribution of this paper can be summarised as:</strong></p>
+<ol>
+  <li>
+    <p>We identify a novel task of object localisation in partial scenes and propose a graph-based solution. We make available a new dataset and evaluation protocol, and show that our method achieves the best performance w.r.t. other comparing methods.</p>
+  </li>
+  <li>
+    <p>We propose a new heterogeneous scene graph, the Spatial Commonsense Graph , for an effective integration between the commonsense knowledge and the spatial scene, using attention-based message passing for the graph updates to prioritise the assimilation of knowledge relevant to the task.</p>
+  </li>
+  <li>
+    <p>We propose <strong>SCG Object Localiser</strong>, a two-staged localisation solution that is agnostic to scene coordinates. The distances between the unseen object and all known objects are first estimated and then used for the localisation based on circular intersections.</p>
+  </li>
+</ol>
+
+<h2 id="code-and-dataset">Code and Dataset</h2>
+<p>The dataset is available on gihub:</p>
+<div class="row">
+    <div class="col-12 col-sm-4">
+    <a href="https://github.com/IIT-PAVIS/SpatialCommonsenseGraph" target="_blank" rel="noopener noreferrer">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/GitHub-Mark-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/GitHub-Mark-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/GitHub-Mark-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-0" src="/assets/img/GitHub-Mark.png" title="Code and Dataset">
+
+  </picture>
+
+</figure>
+
+    </a>
+    <h3 style="text-align:center">Code and Dataset</h3>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<h2 id="paper">Paper</h2>
+
+<p>The paper will be presented at the Conference on Computer Vision and Pattern Recognition (CVPR 2022)</p>
+
+<div class="row">
+    <div class="col-12 col-sm-6">
+      <!--<a href="/assets/pdf/SCG_site_version.pdf"> -->
+      <a href="https://arxiv.org/pdf/2203.05380.pdf" target="_blank" rel="noopener noreferrer">
+          <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/SCG/pdf_thumb-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/SCG/pdf_thumb-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/SCG/pdf_thumb-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-0" src="/assets/img/SCG/pdf_thumb.png" title="example image">
+
+  </picture>
+
+</figure>
+
+      </a>
+    </div>
+   <div class="col-12 col-sm-6 publications">
+
+  <ol class="bibliography"><li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <!--
+        <div class="col-sm-2 abbr"><abbr class="badge">aCVPR</abbr></div>
+      -->
+
+        <!-- Entry bib key -->
+        <div id="giuliari2021transformer" class="col-sm-12">
+        
+          <!-- Title -->
+          <div class="title">Spatial Commonsense Graph for Object localisation in Partial Scenes</div>
+          <!-- Author -->
+          <div class="author">Francesco Giuliari, Geri Skenderi, Marco Cristani, Yiming Wang, and Alessio Del Bue
+          </div>
+
+          <!-- Journal/Book title and date -->
+          <div class="periodical">
+            <em></em>
+          </div>
+        
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/2203.05380" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  </div>
+</div>
+
+<h2 id="examples-of-localisations">Examples of localisations</h2>
+<p>Below You can see some examples of localisation with our proposed approach</p>
+
+<div class="row">
+    <div class="col-12">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+    <li data-target="#carouselExampleIndicators" data-slide-to="1">
+    <li data-target="#carouselExampleIndicators" data-slide-to="2">
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/SCG/ex_loc1-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/SCG/ex_loc1-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/SCG/ex_loc1-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-0" src="/assets/img/SCG/ex_loc1.png" title="example image">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="carousel-item">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/SCG/ex_loc2-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/SCG/ex_loc2-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/SCG/ex_loc2-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-0" src="/assets/img/SCG/ex_loc2.png" title="example image">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="carousel-item">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/SCG/ex_loc3-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/SCG/ex_loc3-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/SCG/ex_loc3-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-0" src="/assets/img/SCG/ex_loc3.png" title="example image">
+
+  </picture>
+
+</figure>
+
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon carousel_black_bg" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon carousel_black_bg" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 870743.</p>
+
+<p>This work is partially supported by the Italian MIUR through PRIN 2017- Project Grant 20172BH297: I-MALL - improving the customer experience in stores by intelligent computer vision, and by the project of the Italian Ministry of Education, Universities and Research (MIUR) ”Dipartimenti di Eccellenza 2018-2022</p>
+
+<h2 id="contacts">Contacts</h2>
+
+<p>For any question you can open an issue on <a href="https://github.com/IIT-PAVIS/SpatialCommonsenseGraph" target="_blank" rel="noopener noreferrer">GitHub</a> or send an email to <a href="mailto:francesco.giuliari@iit.it">Francesco Giuliari</a>.</p>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+    </div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        © Copyright 2023 Francesco  Giuliari. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+
+      </div>
+    </footer>
+
+  </body></body>
+
+  <d-bibliography src="/assets/bibliography/2018-12-22-distill.bib">
+  </d-bibliography>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+</html>
